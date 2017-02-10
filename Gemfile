@@ -11,6 +11,7 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
+gem 'jwt'
 
 group :development, :test do
   gem 'pry'

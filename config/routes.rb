@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  resources :users
+  resources :users do
+    post 'authenticate', on: :collection
+  end
 end
