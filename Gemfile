@@ -10,6 +10,7 @@ gem 'rails', '~> 5.0.1'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'jbuilder', '~> 2.5'
+gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
   gem 'pry'
