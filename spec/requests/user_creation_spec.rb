@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'User creation', type: :request do
   before do
-    post '/users', params: { user: data }, as: :json
+    post '/user', params: { user: data }, as: :json
   end
 
   context 'when given data is valid' do
@@ -16,7 +16,6 @@ RSpec.describe 'User creation', type: :request do
     end
 
     it { expect(response).to have_http_status :created }
-    it { expect(user_url(json_body[:id])).to eq response.location }
   end
 
   context 'when given data is not valid' do

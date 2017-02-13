@@ -9,7 +9,7 @@ gem 'rails', '~> 5.0.1'
 
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
-gem 'jbuilder', '~> 2.5'
+gem 'active_model_serializers'
 gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 
