@@ -15,6 +15,10 @@ class AuthorizeRequest
     else
       :fail
     end
+  rescue JWT::DecodeError
+    :fail
+  rescue JWT::ExpiredSignature
+    :expired
   end
 
 
@@ -35,6 +39,6 @@ class AuthorizeRequest
   end
 
   def user_id
-    decripted_token.first['user_id']
+    decripted_token.first['data']['user_id']
   end
 end

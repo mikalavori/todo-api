@@ -2,7 +2,7 @@ class UserAuth
   ALGORITHM = 'HS256'
 
   def self.token(user)
-    JWT.encode({ user_id: user.id }, hmac_secret, ALGORITHM)
+    JWT.encode({ data: { user_id: user.id }, exp: Time.now.to_i + 4 * 3600 }, hmac_secret, ALGORITHM)
   end
 
   def self.decode(token)

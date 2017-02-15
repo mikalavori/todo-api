@@ -42,13 +42,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
-
-  def authorize_request
-    status, @current_user, asd = AuthorizeRequest.call(request.headers)
-    render_unauthorized unless current_user
-  end
-
-  def current_user
-    @current_user
-  end
 end

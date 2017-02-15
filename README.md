@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+```
+User.create username: 'pippo', email: 'pippo@example.com', password: 'password', password_confirmation: 'password'
+```
+token:
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.Qd8CUvxEfETFilsrLE4SIRNb0xwAzdWrqssfcHhVjHw
 
-* Ruby version
 
-* System dependencies
+curl -H "Content-Type: application/json" -X POST -d '{"user":{"username":"pluto","email":"pluto@example.com","password":"password", "password_confirmation":"password"}}' api.todos.dev:3000/user
 
-* Configuration
+curl -H "Content-Type: application/json" -X POST -d '{"email":"pluto@example.com","password":"password"}' api.todos.dev:3000/user/authenticate
 
-* Database creation
+curl -H "Content-Type: application/json" -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.GXHYzj3Xt3UKr0-TKvme8OYklOm0AQcTcCwQ672gdCI" -X GET api.todos.dev:3000/user/todos
+curl -H "Content-Type: application/json" -H "Authorization: Bearer invalid" -X GET api.todos.dev:3000/user/todos
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+curl -H "Content-Type: application/json" -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.GXHYzj3Xt3UKr0-TKvme8OYklOm0AQcTcCwQ672gdCI" -X POST -d '{"todo":{"title":"prova"}}' api.todos.dev:3000/user/todos
